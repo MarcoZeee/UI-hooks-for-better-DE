@@ -1,10 +1,11 @@
+import { useState } from "react";
 
 const useDeepFreeze = (obj) => {
-    let isFrozen = false;
+    const [isFrozen, setFrozen] = useState(false);
     Object.freeze(obj);
     const buffer = JSON.parse(JSON.stringify(obj)); 
     const setToggle = () => {
-        !isFrozen;
+        setFrozen(!isFrozen);
         console.log(isFrozen);
     }
     for(let i in obj) {
