@@ -10,6 +10,15 @@ You might wonder how to implement a reading process bar with React when scrollin
 
 Now you can use hook `useScrollBar` to implement a reading process bar. 
 
+Clone the repo: 
+
+    git clone https://github.com/MarcoZeee/React-custom-hooks
+
+    cd React-custom-hooks/src/useScrollBar
+
+copy the source code to the local utils folder, e.g. `utils/useScrollBar.js`
+
+
 Before using this library, you need to install **styled-components** .
 
     npm install styled-components
@@ -21,7 +30,7 @@ Before using this library, you need to install **styled-components** .
 #### Usage ####
 
 ```js
-import { useScrollBar } from 'react-ui-hooks';
+import { useScrollBar } from 'utils/useScrollBar.js';
 
 const [size, Div] = useScrollBar();
 
