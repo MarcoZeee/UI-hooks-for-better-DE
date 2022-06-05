@@ -34,9 +34,6 @@ const useScrollBar = () => {
     top: 0;
     left: 0;
   `;
-  return {
-    barSize,
-    Bar
-  };
+  return [barSize, Bar]
 };
 export default useScrollBar;
