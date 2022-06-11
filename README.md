@@ -40,7 +40,9 @@ then to implement the scroll bar, you can use the following code:
 
 ```js
 <UserDefinedFragment>
+
     <Div barSize={size}/>
+
 </UserDefinedFragment>
 
 ```
@@ -52,9 +54,23 @@ Even better, you can name the process bar and prop as you like, for example:
 const [length, WeirdComponent] = useScrollBar();
 
 <UserDefinedFragment>
+
     <WeirdComponent barSize={length}/>
+
 </UserDefinedFragment>
 
 ```
 
+#### Advanced ####
 
+```js
+const [size, Div] = useScrollbar('red', '2');
+
+<UserDefinedFragment>
+
+    <WeirdComponent barSize={length}/>
+
+</UserDefinedFragment>
+
+```
+With the input of color and bar width, you can customize the scroll bar.
