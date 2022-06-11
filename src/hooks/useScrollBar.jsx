@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-const useScrollBar = () => {
+const useScrollBar = (color='blue', width='5') => {
   const prevScrollY = useRef(0);
   const [goingUp, setGoingUp] = useState(false);
   const [barSize, setBarSize] = useState(0);
@@ -28,7 +28,7 @@ const useScrollBar = () => {
   }, [barSize]);
 
   const Bar = styled.div`
-    border-bottom: 5px solid green;
+    border-bottom: ${width}px solid ${color};
     width: ${(props) => props.barSize};
     position: fixed;
     top: 0;
