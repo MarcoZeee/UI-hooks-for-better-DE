@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-const useDeepFreeze = (obj) => {
+
+interface useDeepFreezeOutput {
+    setToggle: () => void;
+    finalObj: object;
+}
+const useDeepFreeze = (obj: object): useDeepFreezeOutput => {
     const [isFrozen, setFrozen] = useState(false);
     Object.freeze(obj);
     const buffer = JSON.parse(JSON.stringify(obj)); 
