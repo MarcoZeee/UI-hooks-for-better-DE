@@ -1,16 +1,18 @@
+import { useState } from "react";
 interface useBeautifyOutput {
   uitls: {
     firstUpper: (str: string) => string;
     eachUpper: (str: string) => string;
   };
   from: {
-    camel: (str: string, mend: (str: string) => string) => string;
-    kebab: (str: string, mend: (str: string) => string) => string;
-    snake: (str: string, mend: (str: string) => string) => string;
+    camel: string;
+    kebab: string;
+    snake: string;
   };
 }
 
-const useBeautify = (): useBeautifyOutput => {
+export const useBeautify = (modifiedText): useBeautifyOutput => {
+  const [text, setText] = useState<string>(modifiedText);
   const firstUpper = (str: string) => str[0].toUpperCase() + str.slice(1);
   const eachUpper = (str: string) => str.split(" ").map(firstUpper).join(" ");
 
@@ -28,9 +30,9 @@ const useBeautify = (): useBeautifyOutput => {
     eachUpper,
   };
   const from = {
-    camel: fromCamel,
-    kebab: fromKebab,
-    snake: fromSnake,
+    camel: fromCamel(text),
+    kebab: fromKebab(text),
+    snake: fromSnake(text),
   };
   return {
     uitls,
