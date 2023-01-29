@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-
+// install styled-components with npm i styled-components in your module folder
 
 type useScrollBarOutput = [string, React.FC<{ barSize: string }>];
 
